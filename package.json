@@ -1,6 +1,6 @@
 {
   "name": "pichecker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A checker library to compare two maths string",
   "type": "module",
   "main": "dist/pichecker.js",
