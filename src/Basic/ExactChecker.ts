@@ -1,5 +1,6 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {NumExp} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name = "exact"
 const description = `exact
@@ -13,7 +14,7 @@ export class ExactChecker extends CheckerAbstract {
 
 	constructor(config?: string[] | string) {
 		super(config)
-		this.name = name
+		this.type = CHECKERS.EXACT
 		this.description = description
 
 		this.isSoft = this.config.includes("soft")

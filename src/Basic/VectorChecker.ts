@@ -2,6 +2,7 @@ import {CheckerAbstract} from "../CheckerAbstract";
 import {stripFirstCharacter, stripLastCharacter} from "../helperFunctions";
 import {Fraction} from "pimath";
 import {ExactChecker} from "./ExactChecker";
+import {CHECKERS} from "../checker.config";
 
 const name = "vector"
 const description = `vector,[paramètres]
@@ -18,7 +19,7 @@ export class VectorChecker extends CheckerAbstract {
 
     constructor(config?: string[] | string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.VECTOR
         this.description = description
 
         if (this.config.includes("co")) { this._colinear = true }

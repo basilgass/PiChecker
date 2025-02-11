@@ -1,6 +1,7 @@
 // TODO : Rational checker is not working - convert ot Polyfactors !
 import {CheckerAbstract} from "../CheckerAbstract";
 import {PolyFactor} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name = "rational"
 const description = `rational,[paramètres]
@@ -14,7 +15,7 @@ const description = `rational,[paramètres]
 export class RationalChecker extends CheckerAbstract {
 	constructor(config: string[] | string) {
 		super(config)
-		this.name = name
+		this.type = CHECKERS.RATIONAL
 		this.description = description
 	}
 

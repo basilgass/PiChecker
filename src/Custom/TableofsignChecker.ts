@@ -1,5 +1,6 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {ExactChecker} from "../Basic";
+import {CHECKERS} from "../checker.config";
 
 const name = "tos"
 const description = `tos,[paramètres]
@@ -13,7 +14,7 @@ export class TableofsignChecker extends CheckerAbstract {
 
     constructor(config: string[] | string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.TABLE_OF_SIGNS
         this.description = description
 
         this.grows = this.config.includes('g') || this.config.includes('grows')

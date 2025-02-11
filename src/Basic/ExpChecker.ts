@@ -1,6 +1,7 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {splitAtSigns, splitIfOutsideParentheses} from "../helperFunctions";
 import {Polynom} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name = "exp"
 const description = `exp,[paramètres]
@@ -12,7 +13,7 @@ aucun
 export class ExpChecker extends CheckerAbstract {
     constructor(config?: string[] | string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.EXPONENTIAL
         this.description = description
     }
 

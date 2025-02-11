@@ -1,4 +1,5 @@
 import {CheckerAbstract} from "../CheckerAbstract";
+import {CHECKERS} from "../checker.config";
 
 const name = "input"
 const description = `input,[paramètres]
@@ -10,7 +11,7 @@ const description = `input,[paramètres]
 export class InputChecker extends CheckerAbstract {
 	constructor(config?: string[] | string) {
 		super(config)
-		this.name = name
+		this.type = CHECKERS.INPUT
 		this.description = description
 	}
 

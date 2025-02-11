@@ -1,5 +1,6 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {Polynom} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name = "function"
 const description = `function|fn,[paramètres]
@@ -12,7 +13,7 @@ export class FunctionChecker extends CheckerAbstract {
     private isDevelopped: boolean
     constructor(config:string[]|string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.FUNCTION
         this.description = description
 
         this.isDevelopped = (this.config.includes("d") || this.config.includes("developped") || this.config.includes("dev"))

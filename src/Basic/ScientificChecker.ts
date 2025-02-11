@@ -1,5 +1,6 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {NumberChecker} from "./NumberChecker";
+import {CHECKERS} from "../checker.config";
 
 const name = "scientific"
 const description = `scientific|scn,[paramètres]
@@ -14,7 +15,7 @@ export class ScientificChecker extends CheckerAbstract {
     private digits: number
     constructor(config:string[]|string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.SCIENTIFIC
         this.description = description
         this.digits = isNaN(+this.config[0])?0:+this.config[0]
 

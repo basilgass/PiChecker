@@ -1,5 +1,6 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {Polynom} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name = "polynom"
 const description = `polynom,[paramètres]
@@ -13,7 +14,7 @@ const description = `polynom,[paramètres]
 export class PolynomChecker extends CheckerAbstract {
 	constructor(config: string[] | string) {
 		super(config)
-		this.name = name
+		this.type = CHECKERS.POLYNOMIAL
 		this.description = description
 	}
 

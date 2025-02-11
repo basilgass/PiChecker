@@ -1,4 +1,5 @@
 import {CheckerAbstract} from "../CheckerAbstract";
+import {CHECKERS} from "../checker.config";
 
 const name = "qcm"
 const description = "qcm,[paramètres]"
@@ -8,7 +9,7 @@ export class QcmChecker extends CheckerAbstract{
 
 	constructor(config: string[]|string){
 		super(config)
-		this.name = name
+		this.type = CHECKERS.QCM
 		this.description = description
 	}
 

@@ -1,8 +1,7 @@
-import type { CheckerResult } from "./checker.config"
+import {type CheckerResult, CHECKERS} from "./checker.config"
 
 export abstract class CheckerAbstract {
     protected constructor(config?: string[] | string) {
-        this._name = ""
         this._description = ""
         this._answer = ""
 
@@ -37,14 +36,14 @@ export abstract class CheckerAbstract {
         this._config = value
     }
 
-    protected _name: string
+    protected _type: CHECKERS | undefined
 
-    get name(): string {
-        return this._name
+    get type(): CHECKERS | undefined {
+        return this._type
     }
 
-    set name(value: string) {
-        this._name = value
+    set type(value: CHECKERS) {
+        this._type = value
     }
 
     protected _description: string

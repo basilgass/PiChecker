@@ -1,6 +1,7 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {stripFirstCharacter, stripLastCharacter} from "../helperFunctions";
 import {ExactChecker} from "./ExactChecker";
+import {CHECKERS} from "../checker.config";
 
 const name = "coord"
 const description = `coord,[paramètres]
@@ -14,7 +15,7 @@ export class CoordChecker extends CheckerAbstract {
 
     constructor(config?: string[] | string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.COORDINATES
         this.description = description
 
         this.secondaryChecker = new ExactChecker()

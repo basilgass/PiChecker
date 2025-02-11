@@ -2,6 +2,7 @@ import {CheckerAbstract} from "../CheckerAbstract";
 import {ExpChecker} from "./ExpChecker";
 import {LogChecker} from "./LogChecker";
 import {PolynomChecker} from "./PolynomChecker";
+import {CHECKERS} from "../checker.config";
 
 const name = "primitive"
 const description = `primitive,[paramètres]
@@ -13,7 +14,7 @@ aucun
 export class PrimitiveChecker extends CheckerAbstract {
 	constructor(config?: string[] | string) {
 		super(config)
-		this.name = name
+		this.type = CHECKERS.PRIMITIVE
 		this.description = description
 	}
 

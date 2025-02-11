@@ -1,5 +1,6 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {Fraction} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name="fraction"
 
@@ -13,7 +14,7 @@ export class FractionChecker extends CheckerAbstract {
     private expectReduced: boolean
     constructor(config?:string[]|string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.FRACTION
         this.description = description
 
         this.expectReduced = this.config.includes("r") || this.config.includes("reduced")

@@ -3,6 +3,7 @@
 
 import {CheckerAbstract} from "../CheckerAbstract";
 import {Equation, Numeric} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name = "equation"
 const description = `equation,[paramètres]
@@ -22,7 +23,7 @@ export class EquationChecker extends CheckerAbstract {
 
 	constructor(config: string[] | string) {
 		super(config)
-		this.name = name
+		this.type = CHECKERS.EQUATION
 		this.description = description
 
 		this.isReduced =

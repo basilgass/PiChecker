@@ -1,4 +1,5 @@
 import {CheckerAbstract} from "../CheckerAbstract";
+import {CHECKERS} from "../checker.config";
 
 const name = "type"
 const description = "type"
@@ -6,7 +7,7 @@ const description = "type"
 export class TypeChecker extends CheckerAbstract {
     constructor(config:string[]|string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.TYPE
         this.description = description
     }
 

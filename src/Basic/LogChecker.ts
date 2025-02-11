@@ -1,5 +1,6 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {NumExp} from "pimath";
+import {CHECKERS} from "../checker.config";
 
 const name = "log"
 const description = `log,[paramètres]
@@ -10,7 +11,7 @@ const description = `log,[paramètres]
 export class LogChecker extends CheckerAbstract {
     constructor(config?: string[] | string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.LOGARITHM
         this.description = description
     }
 

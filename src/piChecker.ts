@@ -21,22 +21,54 @@ import {
 } from "./Basic";
 import {OrderChecker, QcmChecker, StudyChecker, TableofsignChecker, TypeChecker} from "./Custom";
 
+type CheckerClass = (new (...args: any[]) => CheckerAbstract)
+
+export function checkersList(): Record<CHECKERS, CheckerClass> {
+    let list: Partial<Record<CHECKERS, CheckerClass>> = {}
+
+    list[CHECKERS.CARTESIAN] = CartesianChecker
+    list[CHECKERS.COORDINATES] = CoordChecker
+    list[CHECKERS.EQUATION] = EquationChecker
+    list[CHECKERS.EXACT] = ExactChecker
+    list[CHECKERS.EXPONENTIAL] = ExpChecker
+    list[CHECKERS.FRACTION] = FractionChecker
+    list[CHECKERS.FUNCTION] = FunctionChecker
+    list[CHECKERS.INPUT] = InputChecker
+    list[CHECKERS.LOGARITHM] = LogChecker
+    list[CHECKERS.NUMBER] = NumberChecker
+    list[CHECKERS.POLYNOMIAL] = PolynomChecker
+    list[CHECKERS.PRIMITIVE] = PrimitiveChecker
+    list[CHECKERS.RATIONAL] = RationalChecker
+    list[CHECKERS.SCIENTIFIC] = ScientificChecker
+    list[CHECKERS.SOLUTION] = SolutionChecker
+    list[CHECKERS.STRING] = StringChecker
+    list[CHECKERS.VECTOR] = VectorChecker
+
+    list[CHECKERS.ORDER] = OrderChecker
+    list[CHECKERS.QCM] = QcmChecker
+    list[CHECKERS.STUDY] = StudyChecker
+    list[CHECKERS.TABLE_OF_SIGNS] = TableofsignChecker
+    list[CHECKERS.TYPE] = TypeChecker
+
+    return list as Record<CHECKERS, CheckerClass>
+}
+
 export class PiChecker {
     #checker: CheckerAbstract
 
-    constructor(config: string) {
+    constructor(config?: string) {
         // Split the config to get the main checker and the sub checker
         // name,a,b,c,[checker:name,d,e,f,g]
 
-        const [mainCheckerConfig, subCheckerConfig] = config.split("checker:")
+        const [mainCheckerConfig, subCheckerConfig] = config?.split("checker:") ?? []
 
-
-        this.#checker = this.#loadCheckerTo(mainCheckerConfig)
+        this.#checker = this.#loadCheckerTo(mainCheckerConfig ?? '')
         if (subCheckerConfig !== undefined) {
             this.#checker.secondaryChecker = this.#loadCheckerTo(subCheckerConfig)
         }
-    }
 
+        return this
+    }
 
     get checker(): CheckerAbstract {
         return this.#checker;
@@ -44,6 +76,14 @@ export class PiChecker {
 
     set checker(value: CheckerAbstract) {
         this.#checker = value;
+    }
+
+    get secondaryChecker(): CheckerAbstract | null {
+        return this.#checker.secondaryChecker
+    }
+
+    set secondaryChecker(value: CheckerAbstract){
+        this.#checker.secondaryChecker = value
     }
 
     check(value: string, answer: string): CheckerResult {
@@ -68,54 +108,58 @@ export class PiChecker {
     }
 
     #loadChecker(checker: CHECKERS): (new (...args: any[]) => CheckerAbstract) | null {
-        switch (checker) {
-            case CHECKERS.CARTESIAN:
-                return CartesianChecker
-            case CHECKERS.COORDINATES:
-                return CoordChecker
-            case CHECKERS.EQUATION:
-                return EquationChecker
-            case CHECKERS.EXACT:
-                return ExactChecker
-            case CHECKERS.EXPONENTIAL:
-                return ExpChecker
-            case CHECKERS.FRACTION:
-                return FractionChecker
-            case CHECKERS.FUNCTION:
-                return FunctionChecker
-            case CHECKERS.INPUT:
-                return InputChecker
-            case CHECKERS.LOGARITHM:
-                return LogChecker
-            case CHECKERS.NUMBER:
-                return NumberChecker
-            case CHECKERS.POLYNOMIAL:
-                return PolynomChecker
-            case CHECKERS.PRIMITIVE:
-                return PrimitiveChecker
-            case CHECKERS.RATIONAL:
-                return RationalChecker
-            case CHECKERS.SCIENTIFIC:
-                return ScientificChecker
-            case CHECKERS.SOLUTION:
-                return SolutionChecker
-            case CHECKERS.STRING:
-                return StringChecker
-            case CHECKERS.VECTOR:
-                return VectorChecker
+        const list = checkersList()
 
-            case CHECKERS.ORDER:
-                return OrderChecker
-            case CHECKERS.QCM:
-                return QcmChecker
-            case CHECKERS.STUDY:
-                return StudyChecker
-            case CHECKERS.TABLE_OF_SIGNS:
-                return TableofsignChecker
-            case CHECKERS.TYPE:
-                return TypeChecker
-        }
-
-        return null
+        return list[checker] ?? null
+        //
+        // switch (checker) {
+        //     case CHECKERS.CARTESIAN:
+        //         return CartesianChecker
+        //     case CHECKERS.COORDINATES:
+        //         return CoordChecker
+        //     case CHECKERS.EQUATION:
+        //         return EquationChecker
+        //     case CHECKERS.EXACT:
+        //         return ExactChecker
+        //     case CHECKERS.EXPONENTIAL:
+        //         return ExpChecker
+        //     case CHECKERS.FRACTION:
+        //         return FractionChecker
+        //     case CHECKERS.FUNCTION:
+        //         return FunctionChecker
+        //     case CHECKERS.INPUT:
+        //         return InputChecker
+        //     case CHECKERS.LOGARITHM:
+        //         return LogChecker
+        //     case CHECKERS.NUMBER:
+        //         return NumberChecker
+        //     case CHECKERS.POLYNOMIAL:
+        //         return PolynomChecker
+        //     case CHECKERS.PRIMITIVE:
+        //         return PrimitiveChecker
+        //     case CHECKERS.RATIONAL:
+        //         return RationalChecker
+        //     case CHECKERS.SCIENTIFIC:
+        //         return ScientificChecker
+        //     case CHECKERS.SOLUTION:
+        //         return SolutionChecker
+        //     case CHECKERS.STRING:
+        //         return StringChecker
+        //     case CHECKERS.VECTOR:
+        //         return VectorChecker
+        //
+        //     case CHECKERS.ORDER:
+        //         return OrderChecker
+        //     case CHECKERS.QCM:
+        //         return QcmChecker
+        //     case CHECKERS.STUDY:
+        //         return StudyChecker
+        //     case CHECKERS.TABLE_OF_SIGNS:
+        //         return TableofsignChecker
+        //     case CHECKERS.TYPE:
+        //         return TypeChecker
+        // }
+        //
+        // return null
     }
 }

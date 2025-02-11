@@ -1,6 +1,7 @@
 import {CheckerAbstract} from "../CheckerAbstract";
 import {braceSorter} from "../helperFunctions";
 import AsciiMathParser from "../asciimath2tex";
+import {CHECKERS} from "../checker.config";
 
 const name = "solution"
 const description = `solution|sol,[paramètres]
@@ -13,7 +14,7 @@ export class SolutionChecker extends CheckerAbstract {
 
     constructor(config?: string[] | string) {
         super(config)
-        this.name = name
+        this.type = CHECKERS.SOLUTION
         this.description = description
 
     }

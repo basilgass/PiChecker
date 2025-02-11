@@ -1,6 +1,7 @@
-import { Equation, Numeric } from "pimath"
+import {Equation, Numeric} from "pimath"
 import {CheckerAbstract} from "../CheckerAbstract";
 import {PolynomChecker} from "./PolynomChecker";
+import {CHECKERS} from "../checker.config";
 
 const name = "equation"
 const description = `equation,[paramètres]
@@ -24,7 +25,7 @@ export class CartesianChecker extends CheckerAbstract {
 
 	constructor(config: string[] | string) {
 		super(config)
-		this.name = name
+		this.type = CHECKERS.CARTESIAN
 		this.description = description
 
 		this.#reduced =
