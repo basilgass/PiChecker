@@ -5,132 +5,17 @@ var Xe = (a) => {
 var Oi = (a, e, t) => e in a ? Ti(a, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : a[e] = t;
 var A = (a, e, t) => Oi(a, typeof e != "symbol" ? e + "" : e, t), $e = (a, e, t) => e.has(a) || Xe("Cannot " + t);
 var it = (a, e, t) => ($e(a, e, "read from private field"), t ? t.call(a) : e.get(a)), yt = (a, e, t) => e.has(a) ? Xe("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(a) : e.set(a, t), vt = (a, e, t, i) => ($e(a, e, "write to private field"), i ? i.call(a, t) : e.set(a, t), t), jt = (a, e, t) => ($e(a, e, "access private method"), t);
-var z = /* @__PURE__ */ ((a) => (a.CARTESIAN = "cartesian", a.COORDINATES = "coord", a.EQUATION = "equation", a.EXACT = "exact", a.EXPONENTIAL = "exp", a.FRACTION = "fraction", a.FUNCTION = "function", a.INPUT = "input", a.LOGARITHM = "log", a.NUMBER = "number", a.POLYNOMIAL = "polynom", a.PRIMITIVE = "primitive", a.RATIONAL = "rational", a.SCIENTIFIC = "scientific", a.SOLUTION = "solution", a.STRING = "string", a.VECTOR = "vector", a.ORDER = "order", a.QCM = "qcm", a.STUDY = "study", a.TABLE_OF_SIGNS = "tos", a.TYPE = "type", a))(z || {});
-function qi(a) {
-  switch (a) {
-    case "exact":
-      return "exact";
-    case "polynom":
-      return "polynom";
-    case "rational":
-      return "rational";
-    case "equ":
-    case "equation":
-      return "equation";
-    case "cart":
-    case "cartesian":
-      return "cartesian";
-    case "fn":
-    case "function":
-      return "function";
-    case "nb":
-    case "number":
-      return "number";
-    case "fr":
-    case "frac":
-    case "fraction":
-      return "fraction";
-    case "scn":
-      return "scientific";
-    case "tos":
-      return "tos";
-    case "study":
-      return "study";
-    case "sol":
-    case "solution":
-      return "solution";
-    case "coord":
-      return "coord";
-    case "vector":
-      return "vector";
-    case "log":
-      return "log";
-    case "exp":
-      return "exp";
-    case "primitive":
-      return "primitive";
-    default:
-      return "string";
-  }
-}
-class j {
-  constructor(e) {
-    A(this, "_secondaryChecker");
-    A(this, "_config");
-    A(this, "_name");
-    A(this, "_description");
-    A(this, "_answer");
-    this._name = "", this._description = "", this._answer = "", e === void 0 ? this._config = [] : typeof e == "string" ? this._config = e.split(",") : this._config = [...e], this._secondaryChecker = null;
-  }
-  get secondaryChecker() {
-    return this._secondaryChecker;
-  }
-  set secondaryChecker(e) {
-    this._secondaryChecker = e;
-  }
-  get config() {
-    return this._config;
-  }
-  set config(e) {
-    this._config = e;
-  }
-  get name() {
-    return this._name;
-  }
-  set name(e) {
-    this._name = e;
-  }
-  get description() {
-    return this._description;
-  }
-  set description(e) {
-    this._description = e;
-  }
-  get answer() {
-    return this._answer;
-  }
-  set answer(e) {
-    this._answer = e;
-  }
-  check(e, t) {
-    if (this.answer = e, t === "")
-      return {
-        result: !1,
-        message: "Veuillez entrer une valeur"
-      };
-    let i = "";
-    return e === t ? {
-      result: !0,
-      message: i
-    } : (i = this.checkFormat(t), i !== "" ? {
-      result: !1,
-      message: i
-    } : (i = this.checkValue(t), i !== "" ? {
-      result: !1,
-      message: i
-    } : {
-      result: !0,
-      message: ""
-    }));
-  }
-  checkFormat(e) {
-    return e ? "" : "Veuillez entrer une réponse";
-  }
-  checkValue(e) {
-    return "La réponse n'est pas correcte";
-  }
-}
-var Mi = Object.defineProperty, oi = (a) => {
+var qi = Object.defineProperty, oi = (a) => {
   throw TypeError(a);
-}, Si = (a, e, t) => e in a ? Mi(a, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : a[e] = t, l = (a, e, t) => Si(a, typeof e != "symbol" ? e + "" : e, t), Ue = (a, e, t) => e.has(a) || oi("Cannot " + t), n = (a, e, t) => (Ue(a, e, "read from private field"), t ? t.call(a) : e.get(a)), y = (a, e, t) => e.has(a) ? oi("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(a) : e.set(a, t), u = (a, e, t, i) => (Ue(a, e, "write to private field"), e.set(a, t), t), S = (a, e, t) => (Ue(a, e, "access private method"), t);
-function Ii(a) {
+}, Mi = (a, e, t) => e in a ? qi(a, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : a[e] = t, l = (a, e, t) => Mi(a, typeof e != "symbol" ? e + "" : e, t), Ue = (a, e, t) => e.has(a) || oi("Cannot " + t), n = (a, e, t) => (Ue(a, e, "read from private field"), t ? t.call(a) : e.get(a)), y = (a, e, t) => e.has(a) ? oi("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(a) : e.set(a, t), u = (a, e, t, i) => (Ue(a, e, "write to private field"), e.set(a, t), t), S = (a, e, t) => (Ue(a, e, "access private method"), t);
+function Si(a) {
   const e = ci(a), t = [];
   let i, s;
   for (; e.length > 0; )
     i = e.shift() ?? 1, s = (e.length > 0 ? e.pop() : +i) ?? 1, t.push([i, s]);
   return t;
 }
-function Ai(...a) {
+function Ii(...a) {
   const e = Be(...a);
   return a.map((t) => t / e);
 }
@@ -157,44 +42,44 @@ function Be(...a) {
     ;
   return Math.abs(t);
 }
-function Pi(...a) {
+function Ai(...a) {
   return a.reduce(function(e, t) {
     return Math.abs(e * t / Be(e, t));
   });
 }
-function Ci(a, e = 3) {
+function Pi(a, e = 3) {
   return +a.toFixed(e);
 }
-function Ri(a) {
+function Ci(a) {
   if (Number.isSafeInteger(a) || a.toString().split(".")[0].length < 10)
     return 0;
   throw new Error("Periodic value: Not implemented yet");
 }
-function Li(a) {
+function Ri(a) {
   const e = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643, 647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733, 739, 743, 751, 757, 761, 769, 773, 787, 797, 809, 811, 821, 823, 827, 829, 839, 853, 857, 859, 863, 877, 881, 883, 887, 907, 911, 919, 929, 937, 941, 947, 953, 967, 971, 977, 983, 991, 997, 1009, 1013, 1019, 1021, 1031, 1033, 1039, 1049, 1051, 1061, 1063, 1069, 1087, 1091, 1093, 1097, 1103, 1109, 1117, 1123, 1129, 1151, 1153, 1163, 1171, 1181, 1187, 1193, 1201, 1213, 1217, 1223, 1229, 1231, 1237, 1249, 1259, 1277, 1279, 1283, 1289, 1291, 1297, 1301, 1303, 1307, 1319, 1321, 1327, 1361, 1367, 1373, 1381, 1399, 1409, 1423, 1427, 1429, 1433, 1439, 1447, 1451, 1453, 1459, 1471, 1481, 1483, 1487, 1489, 1493, 1499, 1511, 1523, 1531, 1543, 1549, 1553, 1559, 1567, 1571, 1579, 1583, 1597, 1601, 1607, 1609, 1613, 1619, 1621, 1627, 1637, 1657, 1663, 1667, 1669, 1693, 1697, 1699, 1709, 1721, 1723, 1733, 1741, 1747, 1753, 1759, 1777, 1783, 1787, 1789, 1801, 1811, 1823, 1831, 1847, 1861, 1867, 1871, 1873, 1877, 1879, 1889, 1901, 1907, 1913, 1931, 1933, 1949, 1951, 1973, 1979, 1987, 1993, 1997, 1999, 2003, 2011, 2017, 2027, 2029, 2039, 2053, 2063, 2069, 2081, 2083, 2087, 2089, 2099, 2111, 2113, 2129, 2131, 2137, 2141, 2143, 2153, 2161, 2179, 2203, 2207, 2213, 2221, 2237, 2239, 2243, 2251, 2267, 2269, 2273, 2281, 2287, 2293, 2297, 2309, 2311, 2333, 2339, 2341, 2347, 2351, 2357, 2371, 2377, 2381, 2383, 2389, 2393, 2399, 2411, 2417, 2423, 2437, 2441, 2447, 2459, 2467, 2473, 2477, 2503, 2521, 2531, 2539, 2543, 2549, 2551, 2557, 2579, 2591, 2593, 2609, 2617, 2621, 2633, 2647, 2657, 2659, 2663, 2671, 2677, 2683, 2687, 2689, 2693, 2699, 2707, 2711, 2713, 2719, 2729, 2731, 2741, 2749, 2753, 2767, 2777, 2789, 2791, 2797, 2801, 2803, 2819, 2833, 2837, 2843, 2851, 2857, 2861, 2879, 2887, 2897, 2903, 2909, 2917, 2927, 2939, 2953, 2957, 2963, 2969, 2971, 2999, 3001, 3011, 3019, 3023, 3037, 3041, 3049, 3061, 3067, 3079, 3083, 3089, 3109, 3119, 3121, 3137, 3163, 3167, 3169, 3181, 3187, 3191, 3203, 3209, 3217, 3221, 3229, 3251, 3253, 3257, 3259, 3271, 3299, 3301, 3307, 3313, 3319, 3323, 3329, 3331, 3343, 3347, 3359, 3361, 3371, 3373, 3389, 3391, 3407, 3413, 3433, 3449, 3457, 3461, 3463, 3467, 3469, 3491, 3499, 3511, 3517, 3527, 3529, 3533, 3539, 3541, 3547, 3557, 3559, 3571, 3581, 3583, 3593, 3607, 3613, 3617, 3623, 3631, 3637, 3643, 3659, 3671, 3673, 3677, 3691, 3697, 3701, 3709, 3719, 3727, 3733, 3739, 3761, 3767, 3769, 3779, 3793, 3797, 3803, 3821, 3823, 3833, 3847, 3851, 3853, 3863, 3877, 3881, 3889, 3907, 3911, 3917, 3919, 3923, 3929, 3931, 3943, 3947, 3967, 3989, 4001, 4003, 4007, 4013, 4019, 4021, 4027, 4049, 4051, 4057, 4073, 4079, 4091, 4093, 4099, 4111, 4127, 4129, 4133, 4139, 4153, 4157, 4159, 4177, 4201, 4211, 4217, 4219, 4229, 4231, 4241, 4243, 4253, 4259, 4261, 4271, 4273, 4283, 4289, 4297, 4327, 4337, 4339, 4349, 4357, 4363, 4373, 4391, 4397, 4409, 4421, 4423, 4441, 4447, 4451, 4457, 4463, 4481, 4483, 4493, 4507, 4513, 4517, 4519, 4523, 4547, 4549, 4561, 4567, 4583, 4591, 4597, 4603, 4621, 4637, 4639, 4643, 4649, 4651, 4657, 4663, 4673, 4679, 4691, 4703, 4721, 4723, 4729, 4733, 4751, 4759, 4783, 4787, 4789, 4793, 4799, 4801, 4813, 4817, 4831, 4861, 4871, 4877, 4889, 4903, 4909, 4919, 4931, 4933, 4937, 4943, 4951, 4957, 4967, 4969, 4973, 4987, 4993, 4999, 5003, 5009, 5011, 5021, 5023, 5039, 5051, 5059, 5077, 5081, 5087, 5099, 5101, 5107, 5113, 5119, 5147, 5153, 5167, 5171, 5179, 5189, 5197, 5209, 5227, 5231, 5233, 5237, 5261, 5273, 5279, 5281, 5297, 5303, 5309, 5323, 5333, 5347, 5351, 5381, 5387, 5393, 5399, 5407, 5413, 5417, 5419, 5431, 5437, 5441, 5443, 5449, 5471, 5477, 5479, 5483, 5501, 5503, 5507, 5519, 5521, 5527, 5531, 5557, 5563, 5569, 5573, 5581, 5591, 5623, 5639, 5641, 5647, 5651, 5653, 5657, 5659, 5669, 5683, 5689, 5693, 5701, 5711, 5717, 5737, 5741, 5743, 5749, 5779, 5783, 5791, 5801, 5807, 5813, 5821, 5827, 5839, 5843, 5849, 5851, 5857, 5861, 5867, 5869, 5879, 5881, 5897, 5903, 5923, 5927, 5939, 5953, 5981, 5987, 6007, 6011, 6029, 6037, 6043, 6047, 6053, 6067, 6073, 6079, 6089, 6091, 6101, 6113, 6121, 6131, 6133, 6143, 6151, 6163, 6173, 6197, 6199, 6203, 6211, 6217, 6221, 6229, 6247, 6257, 6263, 6269, 6271, 6277, 6287, 6299, 6301, 6311, 6317, 6323, 6329, 6337, 6343, 6353, 6359, 6361, 6367, 6373, 6379, 6389, 6397, 6421, 6427, 6449, 6451, 6469, 6473, 6481, 6491, 6521, 6529, 6547, 6551, 6553, 6563, 6569, 6571, 6577, 6581, 6599, 6607, 6619, 6637, 6653, 6659, 6661, 6673, 6679, 6689, 6691, 6701, 6703, 6709, 6719, 6733, 6737, 6761, 6763, 6779, 6781, 6791, 6793, 6803, 6823, 6827, 6829, 6833, 6841, 6857, 6863, 6869, 6871, 6883, 6899, 6907, 6911, 6917, 6947, 6949, 6959, 6961, 6967, 6971, 6977, 6983, 6991, 6997, 7001, 7013, 7019, 7027, 7039, 7043, 7057, 7069, 7079, 7103, 7109, 7121, 7127, 7129, 7151, 7159, 7177, 7187, 7193, 7207, 7211, 7213, 7219, 7229, 7237, 7243, 7247, 7253, 7283, 7297, 7307, 7309, 7321, 7331, 7333, 7349, 7351, 7369, 7393, 7411, 7417, 7433, 7451, 7457, 7459, 7477, 7481, 7487, 7489, 7499, 7507, 7517, 7523, 7529, 7537, 7541, 7547, 7549, 7559, 7561, 7573, 7577, 7583, 7589, 7591, 7603, 7607, 7621, 7639, 7643, 7649, 7669, 7673, 7681, 7687, 7691, 7699, 7703, 7717, 7723, 7727, 7741, 7753, 7757, 7759, 7789, 7793, 7817, 7823, 7829, 7841, 7853, 7867, 7873, 7877, 7879, 7883, 7901, 7907, 7919, 7927, 7933, 7937, 7949, 7951, 7963, 7993, 8009, 8011, 8017, 8039, 8053, 8059, 8069, 8081, 8087, 8089, 8093, 8101, 8111, 8117, 8123, 8147, 8161, 8167, 8171, 8179, 8191, 8209, 8219, 8221, 8231, 8233, 8237, 8243, 8263, 8269, 8273, 8287, 8291, 8293, 8297, 8311, 8317, 8329, 8353, 8363, 8369, 8377, 8387, 8389, 8419, 8423, 8429, 8431, 8443, 8447, 8461, 8467, 8501, 8513, 8521, 8527, 8537, 8539, 8543, 8563, 8573, 8581, 8597, 8599, 8609, 8623, 8627, 8629, 8641, 8647, 8663, 8669, 8677, 8681, 8689, 8693, 8699, 8707, 8713, 8719, 8731, 8737, 8741, 8747, 8753, 8761, 8779, 8783, 8803, 8807, 8819, 8821, 8831, 8837, 8839, 8849, 8861, 8863, 8867, 8887, 8893, 8923, 8929, 8933, 8941, 8951, 8963, 8969, 8971, 8999, 9001, 9007, 9011, 9013, 9029, 9041, 9043, 9049, 9059, 9067, 9091, 9103, 9109, 9127, 9133, 9137, 9151, 9157, 9161, 9173, 9181, 9187, 9199, 9203, 9209, 9221, 9227, 9239, 9241, 9257, 9277, 9281, 9283, 9293, 9311, 9319, 9323, 9337, 9341, 9343, 9349, 9371, 9377, 9391, 9397, 9403, 9413, 9419, 9421, 9431, 9433, 9437, 9439, 9461, 9463, 9467, 9473, 9479, 9491, 9497, 9511, 9521, 9533, 9539, 9547, 9551, 9587, 9601, 9613, 9619, 9623, 9629, 9631, 9643, 9649, 9661, 9677, 9679, 9689, 9697, 9719, 9721, 9733, 9739, 9743, 9749, 9767, 9769, 9781, 9787, 9791, 9803, 9811, 9817, 9829, 9833, 9839, 9851, 9857, 9859, 9871, 9883, 9887, 9901, 9907, 9923, 9929, 9931, 9941, 9949, 9967, 9973];
   return a === void 0 ? e : e.slice(0, Math.min(e.length, a));
 }
-function _i(a, e) {
+function Li(a, e) {
   const t = [], i = e === !0 ? +a : a ** 2;
   for (let s = 0; s <= a; s++)
     for (let r = 0; r <= a; r++)
       s ** 2 + r ** 2 === i && t.push([s, r, a]);
   return t;
 }
-function Vi(a, e = 2) {
+function _i(a, e = 2) {
   return +`${Math.round(+`${a}e${e}`)}e-${e}`;
 }
 const W = {
-  decompose: Ii,
+  decompose: Si,
   dividers: ci,
-  divideNumbersByGCD: Ai,
+  divideNumbersByGCD: Ii,
   gcd: Be,
-  lcm: Pi,
-  numberCorrection: Ci,
-  periodic: Ri,
-  primes: Li,
-  pythagoreanTripletsWithTarget: _i,
-  round: Vi
+  lcm: Ai,
+  numberCorrection: Pi,
+  periodic: Ci,
+  primes: Ri,
+  pythagoreanTripletsWithTarget: Li,
+  round: _i
 };
 var oe, v, w, Tt;
 const X = class ht {
@@ -368,29 +253,29 @@ l(X, "unique", (a) => {
   return e;
 });
 let d = X;
-var F, K, tt, Bt;
+var z, K, tt, Bt;
 class Ee {
   constructor(...e) {
-    y(this, F), y(this, K), y(this, tt), y(this, Bt), l(this, "parse", (t, i, s) => (u(this, tt, s ?? 1), u(this, K, i ?? 2), u(this, F, t), n(this, K) % 2 === 0 && n(this, F) < 0 && u(this, Bt, !1), this)), l(this, "reduce", () => {
-      let t = Math.floor(Math.pow(n(this, F), 1 / n(this, K)));
+    y(this, z), y(this, K), y(this, tt), y(this, Bt), l(this, "parse", (t, i, s) => (u(this, tt, s ?? 1), u(this, K, i ?? 2), u(this, z, t), n(this, K) % 2 === 0 && n(this, z) < 0 && u(this, Bt, !1), this)), l(this, "reduce", () => {
+      let t = Math.floor(Math.pow(n(this, z), 1 / n(this, K)));
       for (; t > 1; ) {
-        if (n(this, F) % Math.pow(t, n(this, K)) === 0) {
-          u(this, tt, n(this, tt) * t), u(this, F, n(this, F) / Math.pow(t, n(this, K))), t = Math.floor(Math.pow(n(this, F), 1 / n(this, K)));
+        if (n(this, z) % Math.pow(t, n(this, K)) === 0) {
+          u(this, tt, n(this, tt) * t), u(this, z, n(this, z) / Math.pow(t, n(this, K))), t = Math.floor(Math.pow(n(this, z), 1 / n(this, K)));
           continue;
         }
         t--;
       }
       return this;
-    }), l(this, "multiply", (t) => (u(this, F, n(this, F) * t.radical), this.reduce())), l(this, "hasRadical", () => !(n(this, F) === 1 || n(this, F) === 0 || !n(this, Bt))), u(this, F, 1), u(this, tt, 1), u(this, K, 2), u(this, Bt, !0), e.length > 0 && this.parse(e[0], e[1], e[2]);
+    }), l(this, "multiply", (t) => (u(this, z, n(this, z) * t.radical), this.reduce())), l(this, "hasRadical", () => !(n(this, z) === 1 || n(this, z) === 0 || !n(this, Bt))), u(this, z, 1), u(this, tt, 1), u(this, K, 2), u(this, Bt, !0), e.length > 0 && this.parse(e[0], e[1], e[2]);
   }
   // ------------------------------------------
   // Getter and setter
   // ------------------------------------------
   get radical() {
-    return n(this, F);
+    return n(this, z);
   }
   set radical(e) {
-    u(this, F, e);
+    u(this, z, e);
   }
   get nth() {
     return n(this, K);
@@ -406,17 +291,17 @@ class Ee {
   }
   get tex() {
     let e;
-    return n(this, tt) === 1 ? e = "" : n(this, tt) === -1 ? e = "-" : e = n(this, tt).toString(), n(this, F) === 1 ? `${n(this, tt)}` : n(this, K) === 2 ? `${e}\\sqrt{${n(this, F)}}` : `${e}\\sqrt[${n(this, K)}]{${n(this, F)}}`;
+    return n(this, tt) === 1 ? e = "" : n(this, tt) === -1 ? e = "-" : e = n(this, tt).toString(), n(this, z) === 1 ? `${n(this, tt)}` : n(this, K) === 2 ? `${e}\\sqrt{${n(this, z)}}` : `${e}\\sqrt[${n(this, K)}]{${n(this, z)}}`;
   }
   get display() {
     let e;
-    return n(this, tt) === 1 ? e = "" : n(this, tt) === -1 ? e = "-" : e = n(this, tt).toString(), n(this, F) === 1 ? `${n(this, tt)}` : n(this, K) === 2 ? `${e}sqrt{${n(this, F)}}` : `${e}root(${n(this, K)}){${n(this, F)}}`;
+    return n(this, tt) === 1 ? e = "" : n(this, tt) === -1 ? e = "-" : e = n(this, tt).toString(), n(this, z) === 1 ? `${n(this, tt)}` : n(this, K) === 2 ? `${e}sqrt{${n(this, z)}}` : `${e}root(${n(this, K)}){${n(this, z)}}`;
   }
   get value() {
-    return n(this, tt) * Math.pow(n(this, F), 1 / n(this, K));
+    return n(this, tt) * Math.pow(n(this, z), 1 / n(this, K));
   }
 }
-F = /* @__PURE__ */ new WeakMap(), K = /* @__PURE__ */ new WeakMap(), tt = /* @__PURE__ */ new WeakMap(), Bt = /* @__PURE__ */ new WeakMap();
+z = /* @__PURE__ */ new WeakMap(), K = /* @__PURE__ */ new WeakMap(), tt = /* @__PURE__ */ new WeakMap(), Bt = /* @__PURE__ */ new WeakMap();
 var H, Rt, R, It, ct, hi, Je, li, ui, fi, di, He;
 const pi = class {
   constructor(e, t, i = "x") {
@@ -589,15 +474,15 @@ H = /* @__PURE__ */ new WeakMap(), Rt = /* @__PURE__ */ new WeakMap(), R = /* @_
   ].sort((Q, B) => Q.value - B.value);
 };
 let mi = pi;
-var zi = Object.defineProperty, gi = (a) => {
+var Vi = Object.defineProperty, gi = (a) => {
   throw TypeError(a);
-}, Fi = (a, e, t) => e in a ? zi(a, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : a[e] = t, Ne = (a, e, t) => Fi(a, typeof e != "symbol" ? e + "" : e, t), xi = (a, e, t) => e.has(a) || gi("Cannot " + t), Y = (a, e, t) => (xi(a, e, "read from private field"), t ? t.call(a) : e.get(a)), Ut = (a, e, t) => e.has(a) ? gi("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(a) : e.set(a, t), lt = (a, e, t, i) => (xi(a, e, "write to private field"), e.set(a, t), t);
+}, zi = (a, e, t) => e in a ? Vi(a, e, { enumerable: !0, configurable: !0, writable: !0, value: t }) : a[e] = t, Ne = (a, e, t) => zi(a, typeof e != "symbol" ? e + "" : e, t), xi = (a, e, t) => e.has(a) || gi("Cannot " + t), Y = (a, e, t) => (xi(a, e, "read from private field"), t ? t.call(a) : e.get(a)), Ut = (a, e, t) => e.has(a) ? gi("Cannot add the same private member more than once") : e instanceof WeakSet ? e.add(a) : e.set(a, t), lt = (a, e, t, i) => (xi(a, e, "write to private field"), e.set(a, t), t);
 const Ge = {
   pi: Math.PI,
   e: Math.exp(1)
 };
 var m = /* @__PURE__ */ ((a) => (a.VARIABLE = "variable", a.COEFFICIENT = "coefficient", a.OPERATION = "operation", a.CONSTANT = "constant", a.FUNCTION = "function", a.FUNCTION_ARGUMENT = "function-argument", a.MONOM = "monom", a.LEFT_PARENTHESIS = "(", a.RIGHT_PARENTHESIS = ")", a))(m || {}), Lt = /* @__PURE__ */ ((a) => (a.EXPRESSION = "expression", a.POLYNOM = "polynom", a.SET = "set", a.NUMERIC = "numeric", a))(Lt || {});
-function Zi(a, e) {
+function Fi(a, e) {
   if (a.length <= 1)
     return a;
   const t = Object.keys(e).filter((g) => e[g].type === m.FUNCTION).map((g) => g);
@@ -639,20 +524,20 @@ function Zi(a, e) {
       }
     if (p === void 0 || f === void 0)
       throw new Error("The token is undefined");
-    c += Di(h, f), c += p;
+    c += Zi(h, f), c += p;
   }
   return c;
 }
-function Di(a, e) {
+function Zi(a, e) {
   return a === void 0 || a === m.OPERATION || e === m.OPERATION || a === m.LEFT_PARENTHESIS || a === m.FUNCTION || a === m.FUNCTION_ARGUMENT || e === m.RIGHT_PARENTHESIS || e === m.FUNCTION_ARGUMENT ? "" : "*";
 }
-const Wi = {
+const Di = {
   "^": { precedence: 4, associative: "right", type: m.OPERATION },
   "*": { precedence: 3, associative: "left", type: m.OPERATION },
   "/": { precedence: 3, associative: "left", type: m.OPERATION },
   "+": { precedence: 2, associative: "left", type: m.OPERATION },
   "-": { precedence: 2, associative: "left", type: m.OPERATION }
-}, ji = {
+}, Wi = {
   "^": { precedence: 4, associative: "right", type: m.OPERATION },
   "*": { precedence: 3, associative: "left", type: m.OPERATION },
   "/": { precedence: 3, associative: "left", type: m.OPERATION },
@@ -665,7 +550,7 @@ const Wi = {
   sqrt: { precedence: 4, associative: "right", type: m.FUNCTION },
   nthrt: { precedence: 4, associative: "right", type: m.FUNCTION },
   ",": { precedence: 2, associative: "left", type: m.FUNCTION_ARGUMENT }
-}, Ui = {
+}, ji = {
   "^": { precedence: 4, associative: "right", type: m.OPERATION },
   "*": { precedence: 3, associative: "left", type: m.OPERATION },
   "/": { precedence: 3, associative: "left", type: m.OPERATION },
@@ -679,7 +564,7 @@ const Wi = {
   nthrt: { precedence: 4, associative: "right", type: m.FUNCTION },
   ln: { precedence: 4, associative: "right", type: m.FUNCTION },
   log: { precedence: 4, associative: "right", type: m.FUNCTION }
-}, Bi = {
+}, Ui = {
   "&": { precedence: 3, associative: "left", type: m.OPERATION },
   "|": { precedence: 3, associative: "left", type: m.OPERATION },
   "!": { precedence: 4, associative: "right", type: m.OPERATION },
@@ -698,7 +583,7 @@ class Qe {
     return Y(this, Gt).map((e) => e.token);
   }
   tokenConfigInitialization() {
-    return Y(this, At) === Lt.SET ? (lt(this, et, Bi), lt(this, Ot, !1)) : Y(this, At) === Lt.NUMERIC ? (lt(this, et, Ui), lt(this, Ot, !0)) : Y(this, At) === Lt.EXPRESSION ? (lt(this, et, ji), lt(this, Ot, !0)) : (lt(this, et, Wi), lt(this, Ot, !0)), lt(this, ce, Object.keys(Y(this, et)).sort((e, t) => t.length - e.length)), Y(this, et);
+    return Y(this, At) === Lt.SET ? (lt(this, et, Ui), lt(this, Ot, !1)) : Y(this, At) === Lt.NUMERIC ? (lt(this, et, ji), lt(this, Ot, !0)) : Y(this, At) === Lt.EXPRESSION ? (lt(this, et, Wi), lt(this, Ot, !0)) : (lt(this, et, Di), lt(this, Ot, !0)), lt(this, ce, Object.keys(Y(this, et)).sort((e, t) => t.length - e.length)), Y(this, et);
   }
   /**
    * Get the next token to analyse.
@@ -747,7 +632,7 @@ class Qe {
   parse(e, t) {
     const i = [], s = [];
     let r = "", o = 0, c;
-    (t ?? Y(this, Ot)) && (e = Zi(e, Y(this, et)));
+    (t ?? Y(this, Ot)) && (e = Fi(e, Y(this, et)));
     let h = 50, f;
     for (; o < e.length; ) {
       if (h--, h === 0) {
@@ -1285,7 +1170,7 @@ function le(a, e, t, i, s) {
   return a.map((r, o) => r === e ? t : r);
 }
 var Ct, x, Yt, ue, Xt, fe, Me, Se, Ie, Jt, Ae, de, Pe, Ce, Re, Le, wi, _e, Ve;
-const Gi = class I {
+const Bi = class I {
   constructor(e, ...t) {
     return y(this, Le), y(this, Ct), y(this, x), y(this, Yt), y(this, ue, !1), l(this, "parse", (i, ...s) => {
       if (u(this, x, []), u(this, Ct, []), typeof i == "string")
@@ -1781,9 +1666,9 @@ Ct = /* @__PURE__ */ new WeakMap(), x = /* @__PURE__ */ new WeakMap(), Yt = /* @
   } else
     return this.zero();
 }, _e = /* @__PURE__ */ new WeakMap(), Ve = /* @__PURE__ */ new WeakMap();
-let T = Gi;
+let T = Bi;
 var N, O, st, ze, Ht, Fe;
-const Qi = class gt {
+const Gi = class gt {
   constructor(e, t, i) {
     if (y(this, N), y(this, O), y(this, st), l(this, "parse", (s) => {
       const r = n(this, ze).call(this, s);
@@ -1936,9 +1821,9 @@ const Qi = class gt {
   }
 };
 N = /* @__PURE__ */ new WeakMap(), O = /* @__PURE__ */ new WeakMap(), st = /* @__PURE__ */ new WeakMap(), ze = /* @__PURE__ */ new WeakMap(), Ht = /* @__PURE__ */ new WeakMap(), Fe = /* @__PURE__ */ new WeakMap();
-let mt = Qi;
+let mt = Gi;
 var bt, xt, ut, Kt;
-const Yi = class ft {
+const Qi = class ft {
   constructor(e, t) {
     return y(this, bt), y(this, xt), y(this, ut), y(this, Kt, !1), e instanceof ft ? (u(this, xt, e.polynom.clone()), u(this, ut, e.power.clone()), t !== void 0 && n(this, ut).multiply(new d(t))) : e !== void 0 ? (u(this, xt, new T(e)), u(this, ut, new d(t ?? 1))) : (u(this, xt, new T()), u(this, ut, new d(1))), u(this, bt, 1), this;
   }
@@ -2074,7 +1959,7 @@ const Yi = class ft {
   }
 };
 bt = /* @__PURE__ */ new WeakMap(), xt = /* @__PURE__ */ new WeakMap(), ut = /* @__PURE__ */ new WeakMap(), Kt = /* @__PURE__ */ new WeakMap();
-let at = Yi;
+let at = Qi;
 var ee = /* @__PURE__ */ ((a) => (a[a.ROOT = 0] = "ROOT", a[a.POWER = 1] = "POWER", a))(ee || {}), ie, k, se, Ze, yi, pe, De;
 const me = class rt {
   constructor(...e) {
@@ -2359,12 +2244,12 @@ function te(a) {
   }, {}), { numerator: s, denominator: r } = e.divide(t).reduce();
   return s !== 1 && (i[s.toString()] = [new at(s, 1)]), r !== 1 && (i[r.toString()] = [new at(r, -1)]), i;
 }
-function Xi(a, e) {
+function Yi(a, e) {
   return a.dimension === e.dimension && a.array.every(
     (t, i) => e.array[i].isEqual(t)
   );
 }
-function Ji(a, e) {
+function Xi(a, e) {
   if (a.dimension !== e.dimension)
     return !1;
   const t = e.array[0].value / a.array[0].value;
@@ -2372,24 +2257,24 @@ function Ji(a, e) {
     (i, s) => e.array[s].value === i.value * t
   );
 }
-function Hi(a, e) {
+function Ji(a, e) {
   return a.dimension !== e.dimension ? new d().invalid() : a.array.reduce(
     (t, i, s) => t.add(i.clone().multiply(e.array[s])),
     new d(0)
   );
 }
 var D, Mt;
-const Ki = class St {
+const Hi = class St {
   constructor(...e) {
     y(this, D, []), y(this, Mt, !1), l(this, "zero", () => (n(this, D).forEach((t) => t.zero()), this)), l(this, "one", () => (this.zero(), this.x.one(), this)), l(this, "opposite", () => (n(this, D).forEach((t) => t.opposite()), this)), l(this, "add", (t) => (n(this, D).forEach((i, s) => i.add(t.array[s])), this)), l(this, "subtract", (t) => this.add(t.clone().opposite())), l(this, "unit", () => {
       const t = this.norm;
       return t === 0 ? this : this.divideByScalar(t);
-    }), l(this, "dot", (t) => Hi(this, t)), l(this, "normal", () => {
+    }), l(this, "dot", (t) => Ji(this, t)), l(this, "normal", () => {
       if (this.dimension >= 3)
         throw new Error("Normal vector can only be determined in 2D");
       const t = this.x.clone().opposite(), i = this.y.clone();
       return n(this, D)[0] = i, n(this, D)[1] = t, this;
-    }), l(this, "isEqual", (t) => Xi(this, t)), l(this, "isColinearTo", (t) => Ji(this, t)), l(this, "isNormalTo", (t) => this.dot(t).isZero()), l(this, "multiplyByScalar", (t) => {
+    }), l(this, "isEqual", (t) => Yi(this, t)), l(this, "isColinearTo", (t) => Xi(this, t)), l(this, "isNormalTo", (t) => this.dot(t).isZero()), l(this, "multiplyByScalar", (t) => {
       const i = new d(t);
       return this.array.forEach((s) => s.multiply(i)), this;
     }), l(this, "divideByScalar", (t) => this.multiplyByScalar(new d(t).inverse())), l(this, "simplify", () => this.multiplyByScalar(
@@ -2546,16 +2431,16 @@ const Ki = class St {
   }
 };
 D = /* @__PURE__ */ new WeakMap(), Mt = /* @__PURE__ */ new WeakMap();
-let P = Ki;
+let P = Hi;
 var pt = /* @__PURE__ */ ((a) => (a.None = "none", a.Parallel = "parallel", a.Perpendicular = "perpendicular", a.Tangent = "tangent", a))(pt || {}), We = /* @__PURE__ */ ((a) => (a.None = "none", a.Parallel = "parallel", a.Perpendicular = "perpendicular", a.Tangent = "tangent", a))(We || {});
-function ts(a = 0.5) {
+function Ki(a = 0.5) {
   return Math.random() < a;
 }
 function re(a, e, t) {
   return e === void 0 ? a >= 0 ? re(0, a) : re(a, 0) : a === e ? a : Math.floor(Math.random() * (e - a + 1) + a);
 }
 function ge(a, e) {
-  return e === !1 ? ts() ? re(1, a) : -re(1, a) : re(-a, a);
+  return e === !1 ? Ki() ? re(1, a) : -re(1, a) : re(-a, a);
 }
 class ne extends P {
   constructor(...e) {
@@ -2924,7 +2809,74 @@ const ei = class vi {
 };
 V = /* @__PURE__ */ new WeakMap(), G = /* @__PURE__ */ new WeakMap(), // A line is defined as the canonical form
 l(ei, "PERPENDICULAR", We.Perpendicular), l(ei, "PARALLEL", We.Parallel);
-const es = "polynom", is = `polynom,[paramètres]
+class j {
+  constructor(e) {
+    A(this, "_secondaryChecker");
+    A(this, "_config");
+    A(this, "_name");
+    A(this, "_description");
+    A(this, "_answer");
+    this._name = "", this._description = "", this._answer = "", e === void 0 ? this._config = [] : typeof e == "string" ? this._config = e.split(",") : this._config = [...e], this._secondaryChecker = null;
+  }
+  get secondaryChecker() {
+    return this._secondaryChecker;
+  }
+  set secondaryChecker(e) {
+    this._secondaryChecker = e;
+  }
+  get config() {
+    return this._config;
+  }
+  set config(e) {
+    this._config = e;
+  }
+  get name() {
+    return this._name;
+  }
+  set name(e) {
+    this._name = e;
+  }
+  get description() {
+    return this._description;
+  }
+  set description(e) {
+    this._description = e;
+  }
+  get answer() {
+    return this._answer;
+  }
+  set answer(e) {
+    this._answer = e;
+  }
+  check(e, t) {
+    if (this.answer = e, t === "")
+      return {
+        result: !1,
+        message: "Veuillez entrer une valeur"
+      };
+    let i = "";
+    return e === t ? {
+      result: !0,
+      message: i
+    } : (i = this.checkFormat(t), i !== "" ? {
+      result: !1,
+      message: i
+    } : (i = this.checkValue(t), i !== "" ? {
+      result: !1,
+      message: i
+    } : {
+      result: !0,
+      message: ""
+    }));
+  }
+  checkFormat(e) {
+    return e ? "" : "Veuillez entrer une réponse";
+  }
+  checkValue(e) {
+    return "La réponse n'est pas correcte";
+  }
+}
+const ts = "polynom", es = `polynom,[paramètres]
 
 **paramètres**
 - f=factorisé
@@ -2934,7 +2886,7 @@ const es = "polynom", is = `polynom,[paramètres]
 `;
 class Ye extends j {
   constructor(e) {
-    super(e), this.name = es, this.description = is;
+    super(e), this.name = ts, this.description = es;
   }
   get format() {
     const e = [];
@@ -2962,7 +2914,7 @@ class Ye extends j {
     ) || e.match(/(-?[\d]+(\/\d+)?)?x\^2([+-]\d+(\/\d+)?)?/) ? "" : "L'équation n'est pas dans le bon format." : "";
   }
 }
-const ss = "equation", rs = `equation,[paramètres]
+const is = "equation", ss = `equation,[paramètres]
 
 **paramètres**
 - r=réduit
@@ -2973,7 +2925,7 @@ const ss = "equation", rs = `equation,[paramètres]
 - 3d=équation du plan en 3D (ax+by+cz+d=0)
 `;
 var Vt, zt, Ft, Zt, Dt, Wt;
-class ns extends j {
+class rs extends j {
   constructor(t) {
     super(t);
     yt(this, Vt, !1);
@@ -2982,7 +2934,7 @@ class ns extends j {
     yt(this, Zt, !1);
     yt(this, Dt, !1);
     yt(this, Wt, !1);
-    this.name = ss, this.description = rs, vt(this, Vt, this.config.includes("r") || this.config.includes("reduced") || this.config.includes("re")), vt(this, zt, this.config.includes("circle")), vt(this, Ft, this.config.includes("2d")), vt(this, Zt, this.config.includes("mx+h")), vt(this, Dt, this.config.includes("minmax")), vt(this, Wt, this.config.includes("3d")), this.secondaryChecker = new Ye(["s"]);
+    this.name = is, this.description = ss, vt(this, Vt, this.config.includes("r") || this.config.includes("reduced") || this.config.includes("re")), vt(this, zt, this.config.includes("circle")), vt(this, Ft, this.config.includes("2d")), vt(this, Zt, this.config.includes("mx+h")), vt(this, Dt, this.config.includes("minmax")), vt(this, Wt, this.config.includes("3d")), this.secondaryChecker = new Ye(["s"]);
   }
   get format() {
     const t = [];
@@ -3055,7 +3007,7 @@ function ye(a) {
 function ve(a) {
   return a.substring(0, a.length - 1);
 }
-const as = "exact", os = `exact
+const ns = "exact", as = `exact
 
 **paramètres**
 soft = valeur numérique juste, mais pas sous la forme attendue
@@ -3065,7 +3017,7 @@ class be extends j {
     super(t);
     A(this, "isSoft");
     A(this, "format", "réponse sous forme exacte, réduite");
-    this.name = as, this.description = os, this.isSoft = this.config.includes("soft");
+    this.name = ns, this.description = as, this.isSoft = this.config.includes("soft");
   }
   checkValue(t) {
     const i = t.toString(), s = i.startsWith("#") ? i.substring(1) : i, r = this.answer.replace(/sqrt([0-9]+)/g, "sqrt($1)"), o = s.replace(/sqrt([0-9]+)/g, "sqrt($1)");
@@ -3083,17 +3035,17 @@ class be extends j {
     return "La réponse donnée n'est pas juste.";
   }
 }
-const cs = "coord", hs = `coord,[paramètres]
+const os = "coord", cs = `coord,[paramètres]
 
 **paramètres**
 - nb= les coordonnées sont des nombres
 - frac= les coordonnées sont des fractions
 `;
-class ls extends j {
+class hs extends j {
   constructor(t) {
     super(t);
     A(this, "format", "Coordonnées d'un point sous la forme \\((a;b)\\)");
-    this.name = cs, this.description = hs, this.secondaryChecker = new be();
+    this.name = os, this.description = cs, this.secondaryChecker = new be();
   }
   checkFormat(t) {
     return t[0] !== "(" || t[t.length - 1] !== ")" ? "des coordonnées commencent et se terminent par des parenthèses" : "";
@@ -3114,7 +3066,7 @@ class ls extends j {
     return "";
   }
 }
-const us = "equation", fs = `equation,[paramètres]
+const ls = "equation", us = `equation,[paramètres]
 
 **paramètres**
 - r=réduit
@@ -3122,14 +3074,14 @@ const us = "equation", fs = `equation,[paramètres]
 - sommet=forme du sommet
 - circle=forme centre rayon
 `;
-class ds extends j {
+class fs extends j {
   constructor(t) {
     super(t);
     A(this, "isCentreRayon");
     A(this, "isReduced");
     A(this, "isCanonical");
     A(this, "isSommet");
-    this.name = us, this.description = fs, this.isReduced = this.config.includes("r") || this.config.includes("reduced") || this.config.includes("re"), this.isCanonical = this.config.includes("c") || this.config.includes("canonical") || this.config.includes("ca"), this.isSommet = this.config.includes("s") || this.config.includes("sommet"), this.isCentreRayon = this.config.includes("cercle") || this.config.includes("circle");
+    this.name = ls, this.description = us, this.isReduced = this.config.includes("r") || this.config.includes("reduced") || this.config.includes("re"), this.isCanonical = this.config.includes("c") || this.config.includes("canonical") || this.config.includes("ca"), this.isSommet = this.config.includes("s") || this.config.includes("sommet"), this.isCentreRayon = this.config.includes("cercle") || this.config.includes("circle");
   }
   get format() {
     const t = [];
@@ -3175,7 +3127,7 @@ class ds extends j {
     return "";
   }
 }
-const ps = "exp", ms = `exp,[paramètres]
+const ds = "exp", ps = `exp,[paramètres]
 
 **paramètres**
 aucun
@@ -3184,7 +3136,7 @@ class bi extends j {
   constructor(t) {
     super(t);
     A(this, "format", "polynôme avec des exponentielles <br/>\\((x-3)e^{x^2-3}\\)");
-    this.name = ps, this.description = ms;
+    this.name = ds, this.description = ps;
   }
   checkValue(t) {
     const [i, s] = we(t, "/"), [r, o] = we(this.answer, "/");
@@ -3240,16 +3192,16 @@ function ni(a) {
     sort: s
   };
 }
-const gs = "fraction", xs = `fraction,[paramètres]
+const ms = "fraction", gs = `fraction,[paramètres]
 
 **paramètres**
 - r=réduit
 `;
-class ws extends j {
+class xs extends j {
   constructor(t) {
     super(t);
     A(this, "expectReduced");
-    this.name = gs, this.description = xs, this.expectReduced = this.config.includes("r") || this.config.includes("reduced");
+    this.name = ms, this.description = gs, this.expectReduced = this.config.includes("r") || this.config.includes("reduced");
   }
   get format() {
     const t = [];
@@ -3267,16 +3219,16 @@ class ws extends j {
     return i.isNotEqual(s) ? "La réponse donnée n'est pas juste." : i.denominator < 0 ? "Le dénominateur doit être positif." : !i.isReduced() && this.expectReduced ? "La fraction n'est pas réduite." : "";
   }
 }
-const ys = "function", vs = `function|fn,[paramètres]
+const ws = "function", ys = `function|fn,[paramètres]
 
 **paramètres**
 - d=développé
 `;
-class bs extends j {
+class vs extends j {
   constructor(t) {
     super(t);
     A(this, "isDevelopped");
-    this.name = ys, this.description = vs, this.isDevelopped = this.config.includes("d") || this.config.includes("developped") || this.config.includes("dev");
+    this.name = ws, this.description = ys, this.isDevelopped = this.config.includes("d") || this.config.includes("developped") || this.config.includes("dev");
   }
   get format() {
     const t = [];
@@ -3287,19 +3239,19 @@ class bs extends j {
     return i.isEqual(s) ? "" : "la fonction n'est pas juste.";
   }
 }
-const ks = "input", $s = `input,[paramètres]
+const bs = "input", ks = `input,[paramètres]
 
 **paramètres**
 - checker
 `;
-class Es extends j {
+class $s extends j {
   constructor(t) {
     super(t);
     A(this, "format", "Réponse textuelle");
-    this.name = ks, this.description = $s;
+    this.name = bs, this.description = ks;
   }
 }
-const Ns = "log", Ts = `log,[paramètres]
+const Es = "log", Ns = `log,[paramètres]
 
 **paramètres**
 `;
@@ -3307,7 +3259,7 @@ class ki extends j {
   constructor(t) {
     super(t);
     A(this, "format", "réponse sous la forme \\(\\log(a)-3/5\\)");
-    this.name = Ns, this.description = Ts;
+    this.name = Es, this.description = Ns;
   }
   checkFormat(t) {
     return t.includes(".") ? "La réponse n'est pas sous forme exact (nombres entiers)" : t.split("/").length > 2 ? "La réponse ne peut contenir qu'une seule barre de fraction." : "";
@@ -3347,7 +3299,7 @@ class ki extends j {
     return p.toFixed(8) !== g.toFixed(8) ? "La réponse sous forme exacte ne donne pas la bonne valeur." : "";
   }
 }
-const Os = "number", qs = `number|nb,[paramètres]
+const Ts = "number", Os = `number|nb,[paramètres]
 
 **paramètres**
 - [1,2,3,4,...]: nombre de chiffres après la virgule
@@ -3357,7 +3309,7 @@ class $i extends j {
   constructor(t) {
     super(t);
     A(this, "_isStrict");
-    this.name = Os, this.description = qs, isNaN(+this.config[0]) && (this.config = ["0", ...this.config]), this._isStrict = this.config.includes("s");
+    this.name = Ts, this.description = Os, isNaN(+this.config[0]) && (this.config = ["0", ...this.config]), this._isStrict = this.config.includes("s");
   }
   get format() {
     return +this.config[0] == 0 ? "réponse numérique" : `réponse avec ${this.config[0]} chiffre(s) après la virgule`;
@@ -3378,16 +3330,16 @@ class $i extends j {
     return Math.abs(o - c) === 1 ? "Peut être un problème d'arrondi ?" : "La réponse n'est pas juste.";
   }
 }
-const Ms = "primitive", Ss = `primitive,[paramètres]
+const qs = "primitive", Ms = `primitive,[paramètres]
 
 **paramètres**
 aucun
 `;
-class Is extends j {
+class Ss extends j {
   constructor(t) {
     super(t);
     A(this, "format", "primitive d'une fonction");
-    this.name = Ms, this.description = Ss;
+    this.name = qs, this.description = Ms;
   }
   checkValue(t) {
     let i;
@@ -3402,16 +3354,16 @@ class Is extends j {
     return r !== 2 ? r === 1 ? "il manque la constante." : `il y a ${r - 1} constantes...` : s.message;
   }
 }
-const As = "rational", Ps = `rational,[paramètres]
+const Is = "rational", As = `rational,[paramètres]
 
 **paramètres**
 - f=factorisée
 - d=développée
 - r=réduite
 `;
-class Cs extends j {
+class Ps extends j {
   constructor(e) {
-    super(e), this.name = As, this.description = Ps;
+    super(e), this.name = Is, this.description = As;
   }
   get format() {
     const e = [];
@@ -3440,18 +3392,18 @@ class Cs extends j {
     return (this.config.includes("r") || this.config.includes("reduced")) && !o.numerator.isEqual(c.numerator) ? "la fraction rationnelle n'est pas réduite !" : "";
   }
 }
-const Rs = "scientific", Ls = `scientific|scn,[paramètres]
+const Cs = "scientific", Rs = `scientific|scn,[paramètres]
 
 //TODO: scn: mode stricte
 **paramètres**
 - [1,2,3,4,...]: nombre de chiffre après la virgule
 - s: strict (1.2 ne passe pas pour 1.20)
 `;
-class _s extends j {
+class Ls extends j {
   constructor(t) {
     super(t);
     A(this, "digits");
-    this.name = Rs, this.description = Ls, this.digits = isNaN(+this.config[0]) ? 0 : +this.config[0], this.secondaryChecker = new $i([this.digits.toString()]);
+    this.name = Cs, this.description = Rs, this.digits = isNaN(+this.config[0]) ? 0 : +this.config[0], this.secondaryChecker = new $i([this.digits.toString()]);
   }
   get format() {
     return this.digits ? "réponse en notation scientifique" : `réponse en notation scientifique à ${this.digits} chiffre(s) significatif(s)`;
@@ -3462,7 +3414,7 @@ class _s extends j {
     return Math.abs(i) < 1 || Math.abs(i) >= 10 ? "la partie significative n'est pas entre 1 et 10 (non compris)" : i !== r ? "erreur dans la partie significative: " + ((c = this.secondaryChecker) == null ? void 0 : c.check(r.toString(), i.toString()).message) : t.includes("*10^") ? s !== o ? "l'ordre de grandeur n'est pas juste..." : "" : "le format de réponse n'est pas une notation scientifique.";
   }
 }
-class Vs {
+class _s {
   constructor() {
     this.decimalsign = "\\.", this.setup_symbols(), this.sort_symbols();
   }
@@ -4185,14 +4137,14 @@ class Vs {
     }
   }
 }
-const zs = "solution", Fs = `solution|sol,[paramètres]
+const Vs = "solution", zs = `solution|sol,[paramètres]
 
 **paramètres**
 checker = par défaut, c'est le "exact"
 `;
-class Zs extends j {
+class Fs extends j {
   constructor(e) {
-    super(e), this.name = zs, this.description = Fs;
+    super(e), this.name = Vs, this.description = zs;
   }
   get format() {
     var e;
@@ -4200,7 +4152,7 @@ class Zs extends j {
   }
   checkValue(e) {
     if (ai(e))
-      return e === `{${this.answer}} ` ? `${new Vs().parse(
+      return e === `{${this.answer}} ` ? `${new _s().parse(
         this.answer
       )} est déjà un ensemble.` : "Ce n'est pas le bon ensemble de solution.";
     if (ai(this.answer))
@@ -4239,26 +4191,26 @@ function ae(a) {
 function ai(a) {
   return a === "!!" || a === "RR" || a === "RR^**" || a === "RR_+" || a === "RR_+^**" || a === "RR_-" || a === "RR_-^**";
 }
-const Ds = "string", Ws = "string";
-class js extends j {
+const Zs = "string", Ds = "string";
+class Ws extends j {
   constructor(t) {
     super(t);
     A(this, "format", "réponse textuelle");
-    this.name = Ds, this.description = Ws;
+    this.name = Zs, this.description = Ds;
   }
 }
-const Us = "vector", Bs = `vector,[paramètres]
+const js = "vector", Us = `vector,[paramètres]
 
 **paramètres**
 - co=accepte un vecteur colinéaire
 - nb= les composantes sont des nombres
 - frac= les composantes sont des fractions
 `;
-class Gs extends j {
+class Bs extends j {
   constructor(t) {
     super(t);
     A(this, "_colinear", !1);
-    this.name = Us, this.description = Bs, this.config.includes("co") && (this._colinear = !0), this.secondaryChecker = new be();
+    this.name = js, this.description = Us, this.config.includes("co") && (this._colinear = !0), this.secondaryChecker = new be();
   }
   get format() {
     var t;
@@ -4295,36 +4247,36 @@ class Gs extends j {
     return "";
   }
 }
-const Qs = "order", Ys = `order,[paramètres]
+const Gs = "order", Qs = `order,[paramètres]
 
 **paramètres**
 aucun
 `;
-class Xs extends j {
+class Ys extends j {
   constructor(t) {
     super(t);
     A(this, "format", "");
-    this.name = Qs, this.description = Ys;
+    this.name = Gs, this.description = Qs;
   }
 }
-const Js = "qcm", Hs = "qcm,[paramètres]";
-class Ks extends j {
+const Xs = "qcm", Js = "qcm,[paramètres]";
+class Hs extends j {
   constructor(t) {
     super(t);
     A(this, "format", "");
-    this.name = Js, this.description = Hs;
+    this.name = Xs, this.description = Js;
   }
 }
-const tr = "study", er = `study
+const Ks = "study", tr = `study
 
 **paramètres**
 aucun
 `;
-class ir extends j {
+class er extends j {
   constructor(t) {
     super(t);
     A(this, "format", "Tracer le graphe");
-    this.name = tr, this.description = er;
+    this.name = Ks, this.description = tr;
   }
   checkValue(t) {
     const i = t.split(",").sort(), s = this.answer.split(",").sort(), r = s.length - i.length;
@@ -4338,17 +4290,17 @@ class ir extends j {
     return o.length > 0 ? `il y a ${o.length} erreur${o.length > 1 ? "s" : ""}` : c.length > 0 ? `il y a ${c.length} erreur${c.length > 1 ? "s" : ""} dans le tracé` : "";
   }
 }
-const sr = "tos", rr = `tos,[paramètres]
+const ir = "tos", sr = `tos,[paramètres]
 
 **paramètres**
 aucun
 `;
-class nr extends j {
+class rr extends j {
   constructor(t) {
     super(t);
     A(this, "grows");
     A(this, "coords");
-    this.name = sr, this.description = rr, this.grows = this.config.includes("g") || this.config.includes("grows"), this.coords = this.config.includes("c") || this.config.includes("coords"), this.secondaryChecker = new be();
+    this.name = ir, this.description = sr, this.grows = this.config.includes("g") || this.config.includes("grows"), this.coords = this.config.includes("c") || this.config.includes("coords"), this.secondaryChecker = new be();
   }
   get format() {
     var t;
@@ -4389,12 +4341,60 @@ class nr extends j {
     return "";
   }
 }
-const ar = "type", or = "type";
-class cr extends j {
+const nr = "type", ar = "type";
+class or extends j {
   constructor(t) {
     super(t);
     A(this, "format", "Cliquer sur les bonnes lettres.");
-    this.name = ar, this.description = or;
+    this.name = nr, this.description = ar;
+  }
+}
+var F = /* @__PURE__ */ ((a) => (a.CARTESIAN = "cartesian", a.COORDINATES = "coord", a.EQUATION = "equation", a.EXACT = "exact", a.EXPONENTIAL = "exp", a.FRACTION = "fraction", a.FUNCTION = "function", a.INPUT = "input", a.LOGARITHM = "log", a.NUMBER = "number", a.POLYNOMIAL = "polynom", a.PRIMITIVE = "primitive", a.RATIONAL = "rational", a.SCIENTIFIC = "scientific", a.SOLUTION = "solution", a.STRING = "string", a.VECTOR = "vector", a.ORDER = "order", a.QCM = "qcm", a.STUDY = "study", a.TABLE_OF_SIGNS = "tos", a.TYPE = "type", a))(F || {});
+function cr(a) {
+  switch (a) {
+    case "exact":
+      return "exact";
+    case "polynom":
+      return "polynom";
+    case "rational":
+      return "rational";
+    case "equ":
+    case "equation":
+      return "equation";
+    case "cart":
+    case "cartesian":
+      return "cartesian";
+    case "fn":
+    case "function":
+      return "function";
+    case "nb":
+    case "number":
+      return "number";
+    case "fr":
+    case "frac":
+    case "fraction":
+      return "fraction";
+    case "scn":
+      return "scientific";
+    case "tos":
+      return "tos";
+    case "study":
+      return "study";
+    case "sol":
+    case "solution":
+      return "solution";
+    case "coord":
+      return "coord";
+    case "vector":
+      return "vector";
+    case "log":
+      return "log";
+    case "exp":
+      return "exp";
+    case "primitive":
+      return "primitive";
+    default:
+      return "string";
   }
 }
 var Nt, kt, Ei, je, Ni;
@@ -4417,7 +4417,7 @@ class ur {
 }
 Nt = new WeakMap(), kt = new WeakSet(), Ei = function(e) {
   const [t, ...i] = e.split(",");
-  return { checker: qi(t), options: i.filter((s) => s !== "") };
+  return { checker: cr(t), options: i.filter((s) => s !== "") };
 }, je = function(e) {
   const { checker: t, options: i } = jt(this, kt, Ei).call(this, e), s = jt(this, kt, Ni).call(this, t);
   if (s === null)
@@ -4425,76 +4425,76 @@ Nt = new WeakMap(), kt = new WeakSet(), Ei = function(e) {
   return new s(i);
 }, Ni = function(e) {
   switch (e) {
-    case z.CARTESIAN:
-      return ns;
-    case z.COORDINATES:
-      return ls;
-    case z.EQUATION:
-      return ds;
-    case z.EXACT:
+    case F.CARTESIAN:
+      return rs;
+    case F.COORDINATES:
+      return hs;
+    case F.EQUATION:
+      return fs;
+    case F.EXACT:
       return be;
-    case z.EXPONENTIAL:
+    case F.EXPONENTIAL:
       return bi;
-    case z.FRACTION:
-      return ws;
-    case z.FUNCTION:
-      return bs;
-    case z.INPUT:
-      return Es;
-    case z.LOGARITHM:
+    case F.FRACTION:
+      return xs;
+    case F.FUNCTION:
+      return vs;
+    case F.INPUT:
+      return $s;
+    case F.LOGARITHM:
       return ki;
-    case z.NUMBER:
+    case F.NUMBER:
       return $i;
-    case z.POLYNOMIAL:
+    case F.POLYNOMIAL:
       return Ye;
-    case z.PRIMITIVE:
-      return Is;
-    case z.RATIONAL:
-      return Cs;
-    case z.SCIENTIFIC:
-      return _s;
-    case z.SOLUTION:
-      return Zs;
-    case z.STRING:
-      return js;
-    case z.VECTOR:
-      return Gs;
-    case z.ORDER:
-      return Xs;
-    case z.QCM:
-      return Ks;
-    case z.STUDY:
-      return ir;
-    case z.TABLE_OF_SIGNS:
-      return nr;
-    case z.TYPE:
-      return cr;
+    case F.PRIMITIVE:
+      return Ss;
+    case F.RATIONAL:
+      return Ps;
+    case F.SCIENTIFIC:
+      return Ls;
+    case F.SOLUTION:
+      return Fs;
+    case F.STRING:
+      return Ws;
+    case F.VECTOR:
+      return Bs;
+    case F.ORDER:
+      return Ys;
+    case F.QCM:
+      return Hs;
+    case F.STUDY:
+      return er;
+    case F.TABLE_OF_SIGNS:
+      return rr;
+    case F.TYPE:
+      return or;
   }
   return null;
 };
 export {
-  ns as CartesianChecker,
-  ls as CoordChecker,
-  ds as EquationChecker,
+  rs as CartesianChecker,
+  hs as CoordChecker,
+  fs as EquationChecker,
   be as ExactChecker,
   bi as ExpChecker,
-  ws as FractionChecker,
-  bs as FunctionChecker,
-  Es as InputChecker,
+  xs as FractionChecker,
+  vs as FunctionChecker,
+  $s as InputChecker,
   ki as LogChecker,
   $i as NumberChecker,
-  Xs as OrderChecker,
+  Ys as OrderChecker,
   ur as PiChecker,
   Ye as PolynomChecker,
-  Is as PrimitiveChecker,
-  Ks as QcmChecker,
-  Cs as RationalChecker,
-  _s as ScientificChecker,
-  Zs as SolutionChecker,
-  js as StringChecker,
-  ir as StudyChecker,
-  nr as TableofsignChecker,
-  cr as TypeChecker,
-  Gs as VectorChecker
+  Ss as PrimitiveChecker,
+  Hs as QcmChecker,
+  Ps as RationalChecker,
+  Ls as ScientificChecker,
+  Fs as SolutionChecker,
+  Ws as StringChecker,
+  er as StudyChecker,
+  rr as TableofsignChecker,
+  or as TypeChecker,
+  Bs as VectorChecker
 };
 //# sourceMappingURL=pichecker.js.map
