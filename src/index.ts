@@ -1,3 +1,6 @@
+// Export all values and helpers
+export * from './checker.config'
+
 // Export for typing
 export type * from './CheckerAbstract'
 
