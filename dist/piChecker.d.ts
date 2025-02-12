@@ -7,6 +7,9 @@ export declare class PiChecker {
     constructor(config?: string);
     get checker(): CheckerAbstract;
     set checker(value: CheckerAbstract);
+    get answer(): string;
+    get format(): string;
+    get description(): string;
     get secondaryChecker(): CheckerAbstract | null;
     set secondaryChecker(value: CheckerAbstract);
     check(value: string, answer: string): CheckerResult;
