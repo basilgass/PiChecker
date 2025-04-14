@@ -29,7 +29,8 @@ export enum CHECKERS {
     QCM = "qcm",
     STUDY = "study",
     TABLE_OF_SIGNS = "tos",
-    TYPE = "type"
+    TYPE = "type",
+    MATRIX = "matrix",
 }
 
 export function checkerNameToEnum(name: string): CHECKERS {
